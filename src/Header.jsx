@@ -1,5 +1,8 @@
 import { ReactSvg } from "./ReactSvg";
 import clsx from "clsx";
+import { Button } from "./Button";
+import { ShoppingBasket } from "lucide-react";
+import { User } from "lucide-react";
 
 export default function Header() {
   return (
@@ -10,15 +13,21 @@ export default function Header() {
         "items-center",
         "px-2",
         "py-4",
-        "hover:bg-black",
-        "hover:text-white"
+        "justify-between"
       )}
     >
-      <h1 className="flex w-fit">
+      <h1 className="flex w-fit items-center py-4 gap-2 text-lg font-bold">
         <ReactSvg size="25" />
         <span>ReactJourney</span>
       </h1>
-      <nav></nav>
+      <nav className="flex gap-3">
+        <Button type="headerBtn">
+          <ShoppingBasket />
+        </Button>
+        <Button type="headerBtn">
+          <User></User>
+        </Button>
+      </nav>
     </header>
   );
 }
